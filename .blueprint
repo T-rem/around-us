@@ -1,0 +1,22 @@
+created:
+    - app/Http/Controllers/StatusController.php
+    - database/factories/StatusFactory.php
+    - database/migrations/2021_09_12_094933_create_statuses_table.php
+    - app/Models/Status.php
+    - tests/Feature/Http/Controllers/StatusControllerTest.php
+    - app/Http/Requests/StatusStoreRequest.php
+    - app/Http/Requests/StatusUpdateRequest.php
+    - app/Http/Resources/StatusCollection.php
+    - app/Http/Resources/StatusResource.php
+updated:
+    - routes/api.php
+models:
+    User: { id: increments, name: string, email: string, chat_id: integer, indexes: [{ index: id }] }
+    Team: { id: increments, name: string, quiz_id: integer }
+    QuizQuestion: { id: increments, quiz_id: integer, text: integer, type: enum, description: 'string nullable' }
+    Quiz: { id: increments, name: string }
+    UsersTeam: { id: increments, user_id: integer, team_id: integer }
+    Planner: { id: increments, team_id: integer, quiz_id: integer, start_at: date, end_at: date }
+    QuizAnswer: { id: increments, question_id: integer, position: integer, text: string, score: 'integer nullable' }
+    Result: { id: increments, user_id: integer, answer_id: integer, text: 'string nullable' }
+    Status: { id: increments, planner_id: integer, user_id: integer, status: enum, indexes: [{ index: id }] }

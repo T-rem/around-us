@@ -1,0 +1,11 @@
+models:
+  Status:
+    id: increments
+    planner_id: integer
+    user_id: integer
+    status: enum
+    indexes:
+      - index: id
+controllers:
+  Status:
+    resource: api
